@@ -21,6 +21,12 @@ namespace TodoUI
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Load interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TodoUI_Load(object sender, EventArgs e)
         {
             RefreshTodos();
