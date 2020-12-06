@@ -31,7 +31,9 @@ namespace TodoUI
         {
             RefreshTodos();
         }
-
+        /// <summary>
+        /// Refresh todos
+        /// </summary>
         void RefreshTodos()
         {
             _todoList = TodoList.GetTodoList();
