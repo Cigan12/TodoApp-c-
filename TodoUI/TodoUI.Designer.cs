@@ -33,21 +33,26 @@ namespace TodoUI
             this.addNewTodoButton = new System.Windows.Forms.Button();
             this.editTodoButton = new System.Windows.Forms.Button();
             this.removeTodoButton = new System.Windows.Forms.Button();
-            this.todoListDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.todoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.todoListDataGridView)).BeginInit();
+            this.todoListDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.todoListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoListDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // addNewTodoButton
             // 
-            this.addNewTodoButton.Location = new System.Drawing.Point(78, 292);
+            this.addNewTodoButton.Location = new System.Drawing.Point(21, 379);
+            this.addNewTodoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addNewTodoButton.Name = "addNewTodoButton";
-            this.addNewTodoButton.Size = new System.Drawing.Size(75, 23);
+            this.addNewTodoButton.Size = new System.Drawing.Size(56, 19);
             this.addNewTodoButton.TabIndex = 0;
             this.addNewTodoButton.Text = "add";
             this.addNewTodoButton.UseVisualStyleBackColor = true;
@@ -55,9 +60,10 @@ namespace TodoUI
             // 
             // editTodoButton
             // 
-            this.editTodoButton.Location = new System.Drawing.Point(185, 292);
+            this.editTodoButton.Location = new System.Drawing.Point(102, 379);
+            this.editTodoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.editTodoButton.Name = "editTodoButton";
-            this.editTodoButton.Size = new System.Drawing.Size(75, 23);
+            this.editTodoButton.Size = new System.Drawing.Size(56, 19);
             this.editTodoButton.TabIndex = 1;
             this.editTodoButton.Text = "edit";
             this.editTodoButton.UseVisualStyleBackColor = true;
@@ -65,13 +71,18 @@ namespace TodoUI
             // 
             // removeTodoButton
             // 
-            this.removeTodoButton.Location = new System.Drawing.Point(294, 292);
+            this.removeTodoButton.Location = new System.Drawing.Point(183, 379);
+            this.removeTodoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.removeTodoButton.Name = "removeTodoButton";
-            this.removeTodoButton.Size = new System.Drawing.Size(75, 23);
+            this.removeTodoButton.Size = new System.Drawing.Size(56, 19);
             this.removeTodoButton.TabIndex = 2;
             this.removeTodoButton.Text = "remove";
             this.removeTodoButton.UseVisualStyleBackColor = true;
             this.removeTodoButton.Click += new System.EventHandler(this.removeTodoButton_Click);
+            // 
+            // todoListBindingSource
+            // 
+            this.todoListBindingSource.DataSource = typeof(TodoLibrary.TodoInfo);
             // 
             // todoListDataGridView
             // 
@@ -80,75 +91,96 @@ namespace TodoUI
             this.todoListDataGridView.AutoGenerateColumns = false;
             this.todoListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.todoListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn7,
             this.dataGridViewCheckBoxColumn1});
             this.todoListDataGridView.DataSource = this.todoListBindingSource;
-            this.todoListDataGridView.Location = new System.Drawing.Point(36, 45);
+            this.todoListDataGridView.Location = new System.Drawing.Point(12, 22);
             this.todoListDataGridView.Name = "todoListDataGridView";
             this.todoListDataGridView.ReadOnly = true;
-            this.todoListDataGridView.RowHeadersWidth = 51;
-            this.todoListDataGridView.RowTemplate.Height = 24;
             this.todoListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.todoListDataGridView.Size = new System.Drawing.Size(598, 220);
+            this.todoListDataGridView.Size = new System.Drawing.Size(523, 244);
             this.todoListDataGridView.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "TodoID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "TodoID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TodoID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "TodoID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TodoImportanceID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "TodoImportanceID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TodoName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Что сделать";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "TodoPlainDate";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Планируемая дата";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "TodoCategoryID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "TodoCategoryID";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "TodoName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CategoryName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Категория";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ImportanceName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Степень важности";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "TodoPlainDate";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Плановая дата";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "TodoIsCompleted";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Выполнено";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 125;
-            // 
-            // todoListBindingSource
-            // 
-            this.todoListBindingSource.DataSource = typeof(TodoLibrary.TodoInfo);
             // 
             // TodoUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 676);
+            this.ClientSize = new System.Drawing.Size(600, 549);
             this.Controls.Add(this.todoListDataGridView);
             this.Controls.Add(this.removeTodoButton);
             this.Controls.Add(this.editTodoButton);
             this.Controls.Add(this.addNewTodoButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TodoUI";
             this.Text = "Todo Form";
             this.Load += new System.EventHandler(this.TodoUI_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.todoListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.todoListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoListDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,9 +192,13 @@ namespace TodoUI
         private System.Windows.Forms.Button removeTodoButton;
         private System.Windows.Forms.BindingSource todoListBindingSource;
         private System.Windows.Forms.DataGridView todoListDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }

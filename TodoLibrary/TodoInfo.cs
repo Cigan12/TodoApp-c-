@@ -14,6 +14,60 @@ namespace TodoLibrary
         private string _todoName = "";
         private DateTime _todoPlainDate = DateTime.Today;
         private bool _todoIsCompleted = false;
+        private int _todoCategoryID = 0;
+        private string _categoryName = "";
+        private int _todoImportanceID = 0;
+        private string _importanceName = "";
+
+        public int TodoImportanceID
+        {
+            get
+            {
+                return _todoImportanceID;
+            }
+            set
+            {
+                _todoImportanceID = value;
+            }
+        }
+
+        public string ImportanceName
+        {
+            get
+            {
+                return _importanceName;
+
+            }
+            set
+            {
+                _importanceName = value;
+            }
+        }
+
+        public int TodoCategoryID
+        {
+            get
+            {
+                return _todoCategoryID;
+            }
+            set
+            {
+                _todoCategoryID = value;
+            }
+        }
+
+        public string CategoryName
+        {
+            get
+            {
+                return _categoryName;
+            }
+            set
+            {
+
+                _categoryName = value;
+            }
+        }
 
         public int TodoID {
             get {
@@ -79,6 +133,8 @@ namespace TodoLibrary
                 command.Parameters.Add(new SqlParameter("@TodoName", _todoName));
                 command.Parameters.Add(new SqlParameter("@TodoPlainDate", _todoPlainDate));
                 command.Parameters.Add(new SqlParameter("@TodoIsCompleted", _todoIsCompleted));
+                command.Parameters.Add(new SqlParameter("@CategoryID", _todoCategoryID));
+                command.Parameters.Add(new SqlParameter("@ImportanceID", _todoImportanceID));
 
                 command.ExecuteNonQuery();
 
@@ -140,6 +196,8 @@ namespace TodoLibrary
                 command.Parameters.Add(new SqlParameter("@TodoName", _todoName));
                 command.Parameters.Add(new SqlParameter("@TodoPlainDate", _todoPlainDate));
                 command.Parameters.Add(new SqlParameter("@TodoIsCompleted", _todoIsCompleted));
+                command.Parameters.Add(new SqlParameter("@CategoryID", _todoCategoryID));
+                command.Parameters.Add(new SqlParameter("@ImportanceID", _todoImportanceID));
 
                 command.ExecuteNonQuery();
 

@@ -79,6 +79,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TodoLibrary.CategoryList.datasource" />
+    <None Include="Properties\DataSources\TodoLibrary.ImportanceList.datasource" />
     <None Include="Properties\DataSources\TodoLibrary.TodoInfo.datasource" />
     <None Include="Properties\DataSources\TodoLibrary.TodoList.datasource" />
     <None Include="Properties\Settings.settings">

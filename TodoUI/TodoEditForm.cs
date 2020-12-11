@@ -22,6 +22,12 @@ namespace TodoUI
         private void TodoEditForm_Load(object sender, EventArgs e)
         {
             todoInfoBindingSource.DataSource = _newTodo;
+            CategoryList _categoryList = CategoryList.GetDefaultCategoryList();
+            categoryListBindingSource.DataSource = _categoryList;
+
+            ImportanceList _importanceList = ImportanceList.GetDefaultImportanceList();
+
+            importanceListBindingSource.DataSource = _importanceList;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

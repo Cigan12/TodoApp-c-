@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Data;
 using System.Threading.Tasks;
 
 namespace TodoLibrary
 {
-    public class TodoList: List<TodoInfo>
+
+    public class ImportanceList : List<ImportanceInfo>
     {
-    
-        public static TodoList GetTodoList()
+        public static ImportanceList GetDefaultImportanceList()
         {
-            TodoList todoList = new TodoList();
+            ImportanceList myList = new ImportanceList();
             try
             {
                 string connectionString = "Data Source=DESKTOP-0OSLSBL\\SQLEXPRESS;Initial Catalog=Todo;Integrated Security=True";
@@ -23,22 +23,18 @@ namespace TodoLibrary
 
                 SqlCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "GetAllTodos";
+                command.CommandText = "GetImportanceList";
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
                 {
-                    TodoInfo newTodo = new TodoInfo();
+                    ImportanceInfo importance = new ImportanceInfo();
 
-                    newTodo.TodoID = (int)dataReader["TodoID"];
-                    newTodo.TodoName = dataReader["TodoName"].ToString();
-                    newTodo.TodoPlainDate = (DateTime)dataReader["TodoPlainDate"];
-                    newTodo.TodoIsCompleted = (bool)dataReader["TodoIsCompleted"];
-                    newTodo.TodoCategoryID = (int)dataReader["TodoCategoryID"];
-                    newTodo.CategoryName = dataReader["CategoryName"].ToString();
-                    newTodo.TodoImportanceID = (int)dataReader["TodoImportanceID"];
-                    newTodo.ImportanceName = dataReader["ImportanceName"].ToString();
-                    todoList.Add(newTodo);
+                    importance.ImportanceID = (int)dataReader["ImportanceID"];
+                    importance.ImportanceName = dataReader["ImportanceName"].ToString();
+
+
+                    myList.Add(importance);
                 }
 
                 connection.Close();
@@ -49,7 +45,7 @@ namespace TodoLibrary
                 Console.WriteLine(msg);
                 throw;
             }
-            return todoList;
+            return myList;
         }
     }
 }
